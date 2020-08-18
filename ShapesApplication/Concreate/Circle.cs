@@ -1,11 +1,12 @@
-﻿using System;
+﻿using ShapesApplication.Abstract;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Text;
 
 namespace ShapesApplication
 {
-    public class Circle :IShape
+    public class Circle : Shape
     {
         private Color _color;
         private int _radius;
@@ -16,14 +17,14 @@ namespace ShapesApplication
             _radius = radius;
         }
 
-        public int Area()
+        public override int Area()
         {
             return Convert.ToInt32(Math.PI * _radius * _radius);
         }
 
-        public string Draw()
+        public override void Draw()
         {
-            return _color + " - Meter : " + Area();
+            Console.WriteLine("Circle : " + _color + " - Area Meter : " + Area());
         }
     }
 }

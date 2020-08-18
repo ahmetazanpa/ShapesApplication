@@ -1,14 +1,15 @@
-﻿using System;
+﻿using ShapesApplication.Abstract;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Text;
 
 namespace ShapesApplication
 {
-    public class Square : IShape
+    public class Square : Shape
     {
-        private Color _color { get; set; }
-        private int _edge { get; set; }
+        private Color _color;
+        private int _edge;
 
         public Square(Color color, int edge)
         {
@@ -16,14 +17,14 @@ namespace ShapesApplication
             _edge = edge;
         }
 
-        public int Area()
+        public override int Area()
         {
             return _edge * _edge;
         }
 
-        public string Draw()
+        public override void Draw()
         {
-            return _color + " - Meter : " + Area();
+            Console.WriteLine("Square : " + _color + " - Area Meter : " + Area());
         }
     }
 }

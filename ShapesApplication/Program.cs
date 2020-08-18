@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ShapesApplication.Abstract;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
@@ -8,17 +9,19 @@ namespace ShapesApplication
 {
     class Program
     {
+        
         static void Main(string[] args)
         {
-            Circle circle = new Circle(Color.Blue,10);
-            Square square = new Square(Color.Green, 10);
-            Rectangle rectangle = new Rectangle(Color.Red, 5, 8);
-            Triangle triangle = new Triangle(Color.Yellow, 15, 7);
-
-            Console.WriteLine("Circle : " + circle.Draw());
-            Console.WriteLine("Square : " + square.Draw());
-            Console.WriteLine("Rectangle  : " + rectangle.Draw());
-            Console.WriteLine("Triangle  : " + triangle.Draw());
+            Shape shape;
+            shape = new Circle(Color.Blue, 10);
+            shape.Draw();
+            shape = new Rectangle(Color.Red, 5, 8);
+            shape.Draw();
+            shape = new Square(Color.Green, 10);
+            shape.Draw();
+            shape = new Triangle(Color.Yellow, 15, 7);
+            shape.Draw();
+            
             Console.ReadKey();
         }
     }

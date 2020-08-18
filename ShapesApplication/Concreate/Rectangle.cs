@@ -1,11 +1,12 @@
-﻿using System;
+﻿using ShapesApplication.Abstract;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Text;
 
 namespace ShapesApplication
 {
-    public class Rectangle : IShape
+    public class Rectangle : Shape
     {
         private Color _color;
         private int _shorEdge;
@@ -18,14 +19,14 @@ namespace ShapesApplication
             _longEdge = longEdge;
         }
 
-        public int Area()
+        public override int Area()
         {
             return _shorEdge * _longEdge;
         }
 
-        public string Draw()
+        public override void Draw()
         {
-            return  _color + " - Meter : " + Area();
+            Console.WriteLine("Rectangle : "  + _color + " - Area Meter : " + Area());
         }
     }
 }

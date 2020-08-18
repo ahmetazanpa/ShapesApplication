@@ -1,4 +1,5 @@
 ﻿
+using ShapesApplication.Abstract;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -6,7 +7,7 @@ using System.Text;
 
 namespace ShapesApplication
 {
-    public class Triangle : IShape
+    public class Triangle : Shape
     {
         private Color _color;
         private int _edge;
@@ -18,14 +19,14 @@ namespace ShapesApplication
             _height = heigth;
         }
 
-        public int Area()
+        public override int Area()
         {
-            return (_edge * _height)/2;    
+            return (_edge * _height) / 2;
         }
 
-        public string Draw()
+        public override void Draw()
         {
-            return _color + " - Meter : " + Area();
+            Console.WriteLine("Triangle : " + _color + " - Area Meter : " + Area());
         }
     }
 }
